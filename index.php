@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Validate input
     if (empty($task)) {
-        $errors['task'] = 'Task cannot be empty / لا يمكن أن تكون المهمة فارغة';
+        $errors['task'] = 'Task cannot be empty';
     } elseif (strlen($task) > 255) {
-        $errors['task'] = 'Task is too long (max 255 characters) / المهمة طويلة جداً (255 حرف كحد أقصى)';
+        $errors['task'] = 'Task is too long (max 255 characters) ';
     } elseif (!preg_match('/^[\p{Arabic}\p{L}\p{N}\s\-_.,!]+$/u', $task)) {
-        $errors['task'] = 'Invalid characters / أحرف غير مسموحة';
+        $errors['task'] = 'Invalid characters ';
     }
 
     // If validation passes
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("s", $task);
         
         if ($stmt->execute()) {
-            $_SESSION['message'] = 'Task added successfully / تمت إضافة المهمة بنجاح';
+            $_SESSION['message'] = 'Task added successfully ';
             header('Location: index.php');
             exit();
         } else {
@@ -59,7 +59,7 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
     $stmt = $conn->prepare("DELETE FROM tasks WHERE id = ?");
     $stmt->bind_param("i", $task_id);
     if ($stmt->execute()) {
-        $_SESSION['message'] = 'Task deleted / تم حذف المهمة';
+        $_SESSION['message'] = 'Task deleted';
     }
     $stmt->close();
     header("Location: index.php");
