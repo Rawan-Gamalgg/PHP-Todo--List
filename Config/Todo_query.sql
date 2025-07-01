@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS todo_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE todo_app;
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,  
+    user_id BIGINT(20) DEFAULT NULL,
+    title VARCHAR(50) NOT NULL,
+    description VARCHAR(100) DEFAULT NULL,
+    status SMALLINT NOT NULL DEFAULT 0 COMMENT '0=pending, 1=completed', 
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updatedAt TIMESTAMP NULL DEFAULT NULL
+);
+USE TodoAppProject;
+SELECT * FROM Tasks ORDER BY 'status', createdAt DESC
+ 

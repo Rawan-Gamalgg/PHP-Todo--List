@@ -1,0 +1,47 @@
+ body {
+     font-family: sans-serif;
+     max-width: 600px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+
+ h1 {
+     color: rgba(255, 81, 81, 0.729);
+ }
+
+ .task-list {
+     list-style: none;
+     padding: 0;
+ }
+
+ .task-item {
+     display: flex;
+     justify-content: space-between;
+     padding: 10px;
+     border-bottom: 1px solid #eee;
+ }
+
+ .completed {
+     text-decoration: line-through;
+     color: #888;
+ }
+
+
+ form {
+     background-color: rgba(247, 156, 156, 0.722);
+     display: flex;
+     margin-bottom: 20px;
+ }
+
+ input[type="text"] {
+     flex-grow: 1;
+     padding: 8px;
+ }
+
+ button {
+     padding: 8px 15px;
+     background: #007bff;
+     color: white;
+     border: none;
+     cursor: pointer;
+ }

@@ -1,0 +1,18 @@
+# Ignore environment/config files
+.env
+config/database.php  # Contains sensitive DB credentials
+
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore dependency folders
+/vendor/  # Composer dependencies
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+
+# Ignore local temp files
+*.log
+*.tmp
